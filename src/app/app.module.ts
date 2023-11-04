@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import {HttpClientModule} from'@angular/common/http';
+import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListarUsuariosComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
