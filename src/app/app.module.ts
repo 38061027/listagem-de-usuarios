@@ -7,17 +7,21 @@ import { StoreModule } from '@ngrx/store';
 import {HttpClientModule} from'@angular/common/http';
 import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.component';
 import { MainComponent } from './main/main.component';
+import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarUsuariosComponent,
-    MainComponent
+    MainComponent,
+    CadastroUsuariosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     StoreModule.forRoot({}, {})
   ],
   providers: [],
