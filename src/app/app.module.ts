@@ -1,3 +1,4 @@
+import { appEffects, appReducer } from './store/app-state';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +10,8 @@ import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.compo
 import { MainComponent } from './main/main.component';
 import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
 import { FormsModule } from '@angular/forms';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot(appEffects),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]
