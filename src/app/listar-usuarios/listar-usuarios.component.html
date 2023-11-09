@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let row of listaUsuarios">
+    <tr *ngFor="let row of listaUsuarios$ | async">
       <td>{{row.id}}</td>
       <td>{{row.name}}</td>
       <td>{{row.idade}}</td>

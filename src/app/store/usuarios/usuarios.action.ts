@@ -51,14 +51,14 @@ export const loadUsuarioFail = createAction(
 );
 
 
-//Create usuario
+//update usuario
 
 
 export const updateUsuario = createAction(usuariosTypeActions.UPDATE_USUARIO,
   props<{ payload: IUsuario }>()
     );
 export const updateUsuarioSucess = createAction(
-  usuariosTypeActions.UPDATE_USUARIO,
+  usuariosTypeActions.UPDATE_USUARIO_SUCESS,
   props<{ payload: IUsuario }>()
 );
 export const updateUsuarioFail = createAction(
@@ -66,14 +66,14 @@ export const updateUsuarioFail = createAction(
   props<{ error: string }>()
 );
 
-//Update usuario
+//CREATE usuario
 
 
 export const createUsuario = createAction(usuariosTypeActions.CREATE_USUARIO,
   props<{ payload: IUsuario }>()
     );
 export const createUsuarioSucess = createAction(
-  usuariosTypeActions.CREATE_USUARIO,
+  usuariosTypeActions.CREATE_USUARIO_SUCESS,
   props<{ payload: IUsuario }>()
 );
 export const createUsuarioFail = createAction(
@@ -88,7 +88,7 @@ export const deleteUsuario = createAction(usuariosTypeActions.DELETE_USUARIO,
   props<{ payload: number }>()
     );
 export const deleteUsuarioSucess = createAction(
-  usuariosTypeActions.DELETE_USUARIO,
+  usuariosTypeActions.DELETE_USUARIO_SUCESS,
   props<{ payload: number }>()
 );
 export const deleteUsuarioFail = createAction(

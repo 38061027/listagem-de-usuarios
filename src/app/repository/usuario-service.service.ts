@@ -25,12 +25,10 @@ export class UsuarioServiceService {
   }
 
   updateUsuario(record: IUsuario) {
-    let headers = new HttpHeaders();
-    headers = headers.set('Content-Type', 'aplication/json; charset=utf-8');
+
     return this.http.put<IUsuario>(
-      'http://localhost:3000/usuarios/' + record.id,
-      JSON.stringify(record),
-      { headers: headers }
+      'http://localhost:3000/usuarios/' + record.id, record,
+
     );
   }
 
