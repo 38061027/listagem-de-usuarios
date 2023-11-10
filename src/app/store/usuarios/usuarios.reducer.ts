@@ -59,11 +59,10 @@ const _usuarioReducer = createReducer(
   })),
 
 
+
   on(fromUsuariosAction.deleteUsuarioSucess, (state, { payload }) => ({
     ...state,
-    usuarios: [...state.usuarios].filter((filter)=>{
-      filter.id != payload
-    }),
+    usuarios: [...state.usuarios].filter((user) => { return user.id !== payload}),
     error: '',
   })),
   on(fromUsuariosAction.deleteUsuarioFail, (state, { error }) => ({
@@ -94,6 +93,11 @@ export const getUsuario = createSelector(
   (state:IUsuariosState) => state.usuario
 )
 
+
+export const getUsuariosAdministradores = createSelector(
+  getUsuariosFeatureState,
+  (state:IUsuariosState) => state.usuarios.filter((filter)=> filter.perfil == 'Administrador')
+)
 
 export const getUsuarioError = createSelector(
   getUsuariosFeatureState,

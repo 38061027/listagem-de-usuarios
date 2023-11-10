@@ -9,14 +9,14 @@
     {
       "id": 2,
       "name": "Thor",
-      "idade": "28",
-      "perfil": "vendedor"
+      "idade": "22",
+      "perfil": "Diretor"
     },
     {
-      "id": 3,
-      "name": "Thor",
-      "idade": "28",
-      "perfil": "vendedor"
+      "id": 4,
+      "name": "pedro",
+      "idade": "22",
+      "perfil": "Administrador"
     }
   ]
 }

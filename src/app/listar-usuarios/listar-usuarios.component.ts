@@ -14,20 +14,32 @@ import * as fromUsuariosSelector from '../store/usuarios/usuarios.reducer';
 })
 export class ListarUsuariosComponent implements OnInit{
 
-  // listaUsuarios: IUsuario[] = []
+
   listaUsuarios$: Observable<IUsuario[]> = this.store.select(fromUsuariosSelector.getUsuarios)
+  usuario$: Observable<IUsuario | null> = this.store.select(fromUsuariosSelector.getUsuario)
 
   constructor(
-  private store: Store<IAppState>
-    ){}
+    private store: Store<IAppState>
+    ){
+
+    }
 
   ngOnInit(): void {
     this.store.dispatch(fromUsuariosAction.loadUsuarios())
-      // this.service.getUsuarios().subscribe(
-      //   (usuarios:IUsuario[]) =>{
-      //     this.listaUsuarios = usuarios
-      //   }
-      // )
-  }
+
+    }
+
+    editar(id:number){
+      this.store.dispatch(fromUsuariosAction.loadUsuario({payload:id}))
+
+    }
+
+
+
+      excluir(id:number){
+        this.store.dispatch(fromUsuariosAction.deleteUsuario({payload:id}))
+      }
+
+
 
 }
